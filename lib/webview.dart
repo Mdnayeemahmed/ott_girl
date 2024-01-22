@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
@@ -163,9 +165,8 @@ class _WebViewScreenState extends State<WebViewScreen> {
             ),
             TextButton(
               onPressed: () {
-                _webViewController.clearCache();
-                Navigator.of(context).pop(); // Close the dialog
-                SystemNavigator.pop(); // Close the app
+                Navigator.of(context).pop();
+                exit(0);// Close the dialog
               },
               child: Text("Yes"),
             ),
